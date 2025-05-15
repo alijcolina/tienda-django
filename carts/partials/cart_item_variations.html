@@ -1,0 +1,11 @@
+{% if variations %}
+    {% for item in variations %}
+        {{ item.variation_category | capfirst }} : {{ item.variation_value | capfirst }}<br>
+    {% endfor %}
+{% endif %}
+
+{% load cart_tags %}
+
+<p class="text-muted small">
+    {% display_cart_item_variations cart_item.variations.all %}
+</p>
